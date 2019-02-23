@@ -1,5 +1,6 @@
 # Docker
-<!-- ```bash -->
+
+#### Orientation
 ##### List Docker CLI commands
 docker  
 docker container --help
@@ -16,6 +17,8 @@ docker container ls
 docker container ls -all  
 docker container ls -aq
 
+---
+#### Container
 ##### Create image using this directory's Dockerfile  
 docker build -t friendlyhello .  
 ##### Run "friendlyname" mapping port 4000 to 80  
@@ -48,4 +51,22 @@ docker tag <image> username/repository:tag
 docker push username/repository:tag            
 ##### Run image from a registry  
 docker run username/repository:tag                   
-<!-- ``` -->
+
+---
+#### Services
+##### List stacks or apps
+docker stack ls                                            
+##### Run the specified Compose file
+docker stack deploy -c <composefile> <appname>  
+##### List running services associated with an app
+docker service ls                 
+##### List tasks associated with an app
+docker service ps <service>                  
+##### Inspect task or container
+docker inspect <task or container>                   
+##### List container IDs
+docker container ls -q                                      
+##### Tear down an application
+docker stack rm <appname>                             
+##### Take down a single node swarm from the manager
+docker swarm leave --force      
